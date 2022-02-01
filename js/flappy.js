@@ -91,6 +91,12 @@ function Passaro(alturaJogo){
         voando = true
         this.elemento.style.transform = 'rotate(-25deg)'
     } 
+
+    window.ontouchend = e => {
+        voando = false
+        this.elemento.style.transform = 'rotate(25deg)'
+    }
+    
     this.animar = () => {
         const novoY = this.getY() + (voando ? 8 : -5)
         const alturaMaxima = alturaJogo - this.elemento.clientHeight
