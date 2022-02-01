@@ -85,7 +85,12 @@ function Passaro(alturaJogo){
     window.onkeyup = e => {
         voando = false
         this.elemento.style.transform = 'rotate(25deg)'
-    }    
+    }
+
+    window.ontouchstart = e => {
+        voando = true
+        this.elemento.style.transform = 'rotate(-25deg)'
+    } 
     this.animar = () => {
         const novoY = this.getY() + (voando ? 8 : -5)
         const alturaMaxima = alturaJogo - this.elemento.clientHeight
@@ -156,7 +161,7 @@ function FlappyBird(){
     const largura = areaDoJogo.clientWidth
     
     const progresso = new Progresso()
-    const barreiras = new Barreiras(altura, largura, 200, 400, ()=> progresso.atualizarPontos(++pontos))
+    const barreiras = new Barreiras(altura, largura, 250, 400, ()=> progresso.atualizarPontos(++pontos))
     const passaro = new Passaro(altura)
     const recomecar = new Recomecar()
     
@@ -175,6 +180,7 @@ function FlappyBird(){
                 areaDoJogo.appendChild(recomecar.elemento)
                 window.onkeydown = () =>{}
                 window.onkeyup = () =>{}
+                window.ontouchstart = () =>{}
             }
         },20)
     }
