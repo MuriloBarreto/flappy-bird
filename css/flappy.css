@@ -22,6 +22,7 @@ body {
     background-color: #0D262D;
     color: #fff;
     height: 100%;
+    touch-action: none;
 }
 
 .conteudo {
