@@ -159,7 +159,7 @@ function colidiu(passaro, barreiras){
     return colidiu
 }
 
-function FlappyBird(des,abertura){
+function FlappyBird(des,abertura, espaco){
     let pontos = 0
 
     const areaDoJogo = document.querySelector('[wm-flappy]')
@@ -167,7 +167,7 @@ function FlappyBird(des,abertura){
     const largura = areaDoJogo.clientWidth
     
     const progresso = new Progresso()
-    const barreiras = new Barreiras(altura, largura, abertura,des, 400, ()=> progresso.atualizarPontos(++pontos))
+    const barreiras = new Barreiras(altura, largura, abertura,des, espaco, ()=> progresso.atualizarPontos(++pontos))
     const passaro = new Passaro(altura)
     const recomecar = new Recomecar()
     
@@ -203,15 +203,14 @@ form.onsubmit = e => {
     
 
     if(level === 'Dificil'){
-        new FlappyBird(5,200).start()
+        new FlappyBird(5,200,500).start()
         areaForm.style.display = 'none'
     }else if(level === 'Medio'){
-        new FlappyBird(4,250).start()
+        new FlappyBird(4,250,400).start()
         areaForm.style.display = 'none'
     }else{
-        new FlappyBird(3,270).start()
+        new FlappyBird(3,270,400).start()
         areaForm.style.display = 'none'
     }
 }
-// new FlappyBird().start()
 
