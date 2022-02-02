@@ -194,9 +194,13 @@ function FlappyBird(des,abertura){
 
 const areaForm = document.querySelector('.formulario')
 const form = document.forms[0]
+form.dificuldade.value = localStorage.getItem('nivel')
+
 form.onsubmit = e => {
     e.preventDefault()
     const level = e.target.dificuldade.value
+    localStorage.setItem('nivel',level)
+    
 
     if(level === 'Dificil'){
         new FlappyBird(5,200).start()
