@@ -40,7 +40,6 @@ body {
     width: 1200px;
     margin: 15px;
     background: url('../img/Cloud_sky_design_background.jpg');
-    background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
 }
