@@ -39,7 +39,8 @@ body {
     height: 700px;
     width: 1200px;
     margin: 15px;
-    background-color: deepskyblue;
+    background: url('../img/Cloud_sky_design_background.jpg');
+    background-size: 100%;
     overflow: hidden;
 }
 
