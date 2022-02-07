@@ -56,7 +56,6 @@ function Barreiras(altura, largura, abertura, des, espaco, notificarPonto) {
     this.animar = () => {
         this.pares.forEach(par => {
             par.setX(par.getX()- deslocamento)
-            console.log(par.getX(), par.getLargura())
             if(par.getX() < -par.getLargura()){
                 par.setX(par.getX() + espaco * this.pares.length)
                 par.sortearAbertura()
